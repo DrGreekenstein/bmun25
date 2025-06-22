@@ -11,6 +11,7 @@
 }
 .bAbout, .bText{
   font-family: "Caprasimo", serif;
+  font-weight: 100;
 }
 
 .bHr{

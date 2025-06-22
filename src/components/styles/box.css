@@ -1,0 +1,16 @@
+.bContainer{
+  border-radius: 30px;
+  height: auto;
+  margin-top: 170px;
+  margin-left: 3vw;
+  margin-right: 2vw;
+  padding: 20px;
+  width: 80vw;
+}
+.bBall{
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
+

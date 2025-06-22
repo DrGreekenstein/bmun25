@@ -1,4 +1,5 @@
 import Details from '@/components/details'
+import NavBar from '@/components/navbar'
 import React from 'react'
 
 const AdhocCommittee = () => {
@@ -40,7 +41,10 @@ const AdhocCommittee = () => {
   ]
 
   return (
+    <>
+    <NavBar/>
     <Details image={imagePath} shortName={shortName} heading={heading} agenda={agenda} quote={quote} length={length} content={content} chairpersonAddress={chairpersonAddress} conclusion={conclusion}/>
+    </>
   )
 }
 

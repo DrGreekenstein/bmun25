@@ -1,10 +1,15 @@
 import React from 'react'
 import "./styles.css"
+import BoxB from './boxconf'
+import NavBar from '@/components/navbar'
+import BGAnimation from '@/components/animation'
 
 const Conference = () => {
   return (
     <>
-      <div className="bg-gray-900" style={{height: "100vh"}}>
+    <NavBar/>
+
+      <BoxB>
         <div className='flex flex-col items-center'>
           <h1 className="bHeading mt-30 text-7xl text-yellow-500">Conference Details</h1>
           <p className="bHeading mt-30 text-xl text-white text-center">Date: 17th July to 19th July <br />
@@ -14,8 +19,10 @@ const Conference = () => {
           ​</p>
           <p className="bHeading mt-10 text-xl text-white text-center">Getting to the real Part, where will u stay, ig on the streets for now, as i hv not got the hotel details</p>
         </div>
-      </div>
-    </>
+        </BoxB>
+        <BGAnimation/>
+      </>
+
   )
 }
 

@@ -1,7 +1,8 @@
 import Details from '@/components/details'
 import React from 'react'
+import NavBar from '@/components/navbar'
 
-const AdhocCommittee = () => {
+const UNhscCommittee = () => {
   const imagePath = "/assets/adhoc.avif"
   const heading = "UN historic Council Committee for idk"
   const shortName = "(UNHSC)"
@@ -40,8 +41,11 @@ const AdhocCommittee = () => {
   ]
 
   return (
+    <>
+    <NavBar/>
     <Details image={imagePath} shortName={shortName} heading={heading} agenda={agenda} quote={quote} length={length} content={content} chairpersonAddress={chairpersonAddress} conclusion={conclusion}/>
+    </>
   )
 }
 
-export default AdhocCommittee
+export default UNhscCommittee

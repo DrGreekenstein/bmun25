@@ -1,19 +1,19 @@
 import React from "react";
 import "./styles/details.css";
 import Image from "next/image";
-// import nanoId
+import NavBar from "./navbar";
 
 const Details = (props) => {
   return (
     <>
-      {/* navbar */}
-      <div className="bConatiner bg-gray-900">
+      <NavBar/>
+      <div className="bConatiner bg-gray-900 pb-20">
         <div className="flex justify-center pt-40 pb-10">
           <Image src={props.image} width={200} height={200} alt="" />
         </div>
 
         {["heading", "shortName"].map((curr, index) => {
-          const sizeClass = index === 0 ? "text-4xl" : "text-5xl";
+          const sizeClass = index === 0 ? "text-5xl" : "text-6xl";
           return <h1
             key={curr + 10000}
             width={100}
@@ -27,7 +27,7 @@ const Details = (props) => {
         <hr className="bLine h-0.5 mx-auto mt-10 my-7 bg-yellow-600 border-0 rounded-sm md:my-10 dark:bg-white-700" />
 
         <u className="bAbout bg-white">
-          <h1 className="text-4xl text-center text-white mb-5 mt-20">
+          <h1 className="bHeading text-4xl text-center text-white mb-5 mt-20">
             ABOUT COMMITTEE
           </h1>
         </u>
