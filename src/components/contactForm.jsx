@@ -34,17 +34,26 @@ export default function ContactForm() {
         email,
         message,
       });
-      setSubmitted(true);
+      await axios.post(
+        "https://script.google.com/macros/s/AKfycbzZ61yd6-ODpDmpbXft5S0DRTdYzVFljUP8-AzhZMAwbpiqkcnMUQZBdSrQiXIpwgP3/exec",
+        {
+          firstName,
+          lastName,
+          email,
+          message,
+        }
+      );
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 1500);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
       setFirstName("");
       setLastName("");
       setEmail("");
       setMessage("");
-
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 2000);
-    } catch (error) {
-      console.error("Error submitting form:", error);
+      setTimeout(() => setSubmitted(false), 2000);
     }
   };
 
@@ -63,10 +72,11 @@ export default function ContactForm() {
           <h6 className="text-l font-bold text-left text-gray-400">
             Don't be hesitant, feel free to ask your query
           </h6>
-          {submitted&&<h6 className="text-l font-bold text-left text-green-500">
-            Sumitted
-          </h6>}
-
+          {submitted && (
+            <h6 className="text-l font-bold text-left text-green-500">
+              Sumitted
+            </h6>
+          )}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
