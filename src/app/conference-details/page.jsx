@@ -2,7 +2,7 @@ import React from 'react'
 import "./styles.css"
 import BoxB from './boxconf'
 import NavBar from '@/components/navbar'
-import BGAnimation from '@/components/animation'
+import BGAnimation from '@/components/utils/animation'
 
 const Conference = () => {
   return (

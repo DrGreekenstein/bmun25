@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/box.css'
+import '../styles/box.css'
 import * as motion from 'motion/react-client'
 
 const BoxB = ({children}) => {

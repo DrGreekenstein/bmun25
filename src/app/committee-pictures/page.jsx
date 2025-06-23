@@ -1,4 +1,4 @@
-import BoxB from "@/components/box";
+import BoxB from "@/components/utils/box";
 import * as motion from "motion/react-client";
 
 

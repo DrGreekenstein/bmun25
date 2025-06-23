@@ -1,8 +1,8 @@
 import React from 'react';
 import NavBar from '@/components/navbar';
 import SideBar from '@/components/SideBar';
-import BoxB from '@/components/box';
-import BGAnimation from '@/components/animation';
+import BoxB from '@/components/utils/box';
+import BGAnimation from '@/components/utils/animation';
 
 const About = () => {
   const titles = [

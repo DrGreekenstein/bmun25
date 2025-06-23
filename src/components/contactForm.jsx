@@ -10,6 +10,7 @@ export default function ContactForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [click, setClick] = useState(false);
 
   const handleChangeFN = (event) => {
     setFirstName(event.target.value);
@@ -26,6 +27,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setClick(true);
 
     try {
       await axios.post("/api/contact-endpoint", {
@@ -33,28 +35,16 @@ export default function ContactForm() {
         lastName,
         email,
         message,
-      });
-      await axios.post(
-        "https://script.google.com/macros/s/AKfycbzZ61yd6-ODpDmpbXft5S0DRTdYzVFljUP8-AzhZMAwbpiqkcnMUQZBdSrQiXIpwgP3/exec",
-        {
-          firstName,
-          lastName,
-          email,
-          message,
-        }
-      );
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 1500);
+      }).then(setSubmitted(true))
     } catch (error) {
       console.error("Error submitting form:", error);
-    } finally {
+    } 
       setFirstName("");
       setLastName("");
       setEmail("");
       setMessage("");
       setTimeout(() => setSubmitted(false), 2000);
-    }
+      setClick(false)
   };
 
   return (
@@ -161,8 +151,8 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            className="w-full rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md hover:bg-indigo-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-          >
+            className="w-full rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md hover:bg-indigo-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 click ? 'opacity-50 cursor-not-allowed' : 'hover:bg-indigo-500"
+            disabled={click}>
             Submit
           </button>
         </form>

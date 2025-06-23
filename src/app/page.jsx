@@ -2,6 +2,8 @@ import CommList from "@/components/commList";
 import Resources from "@/components/studyGuides";
 import ContactForm from "@/components/contactForm";
 import NavBar from "@/components/navbar";
+import Chatbot from "@/components/chatbot/chatbot";
+import BGAnimation from "@/components/utils/animation";
 
 
 export default function Home() {
@@ -10,6 +12,10 @@ export default function Home() {
   ]
 
   return (
+    <>
     <NavBar/>
+    {/* <BGAnimation/> */}
+    <Chatbot/>
+    </>
   );
 }

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import "./styles/animation.css";
+import "../styles/animation.css";
 
 const FloatingBall = ({ className, duration, delay }) => {
   const xRange = Math.random() * 200 - 40;

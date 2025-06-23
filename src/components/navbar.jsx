@@ -13,8 +13,8 @@ const NavBar = ({children}) => {
 
   return (
     <>
-      <div className="fixed top-0 w-full">
-        <nav className="bg-gray-950 flex items-center">
+      <motion.div className="fixed top-0 w-full" initial={{scaleX:0,x:'-100%'}} animate={{scaleX:'100%', x:'0'}} transition={{duration:0.7}}>
+        <nav className="m-[0.4px] rounded-lg bg-gray-950 flex items-center">
           <Link href='/'><Image
             src="/assets/boscoLogo.png"
             className="ml-50 p-1"
@@ -125,7 +125,7 @@ const NavBar = ({children}) => {
             Contact us
           </Link>
         </nav>
-      </div>
+      </motion.div>
         {children}
 
     </>

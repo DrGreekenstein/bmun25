@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles/sideBar.css'
 import * as motion from 'motion/react-client'
-import Card from './card'
+import Card from './utils/card'
 
 const SideBar = (props) => {
   return (
