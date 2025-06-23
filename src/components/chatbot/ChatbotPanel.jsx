@@ -72,11 +72,22 @@ const ChatbotPanel = forwardRef(({ isLoaded }, ref) => {
             ))}
 
             {submitting && (
-              <div className="self-start bg-gray-700 px-3 py-2 rounded-md max-w-[80%] animate-pulse">
-                Loading...
+              <div className="self-start flex gap-1 items-center px-3 py-2 max-w-[80%]">
+                {Array.from({ length: 3 }).map((_, index) => (
+                  <motion.span
+                    key={index}
+                    className="h-2 w-2 rounded-full bg-white"
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 0.6,
+                      delay: index * 0.2,
+                      ease: "easeInOut",
+                    }}
+                  />
+                ))}
               </div>
             )}
-            
           </div>
 
           <div className="p-3 bg-gray-800 flex gap-2 items-center">
