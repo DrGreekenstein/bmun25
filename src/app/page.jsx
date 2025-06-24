@@ -1,10 +1,9 @@
-import CommList from "@/components/commList";
-import Resources from "@/components/studyGuides";
+"use client";
+
+import Link from "next/link";
 import ContactForm from "@/components/contactForm";
 import NavBar from "@/components/navbar";
-import Chatbot from "@/components/chatbot/chatbot";
-import BGAnimation from "@/components/utils/animation";
-import BoxB from "./conference-details/boxconf";
+import { motion, scale } from "motion/react";
 
 export default function Home() {
   const studyGuideList = [
@@ -19,7 +18,7 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <section className="relative mt-35 w-full h-screen overflow-hidden">
+      <section className="relative mt-32 w-full h-screen overflow-hidden">
         <img
           src="/assets/chairperson.jpg"
           alt="Chairpersons"
@@ -31,9 +30,20 @@ export default function Home() {
             <h1 className="text-5xl md:text-8xl font-bold mb-4">
               BOSCO MUN 2025
             </h1>
-            <p className="text-lg md:text-2xl font-light">
+            <p className="text-lg mb-20 md:text-2xl font-light">
               Igniting Minds. Inspiring Change.
             </p>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", duration: 0.4 }}
+            >
+              <Link href="/committee-pictures">
+                <button className="rounded-lg bg-black/40 text-white text-lg md:text-xl px-6 py-3 w-full md:w-auto shadow-md hover:bg-black/60 transition-colors duration-200">
+                  See Committee Pictures
+                </button>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
