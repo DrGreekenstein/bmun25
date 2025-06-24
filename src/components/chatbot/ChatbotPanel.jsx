@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { FaRegPaperPlane } from "react-icons/fa";
 import axios from "axios";
 
+
 const ChatbotPanel = forwardRef(({ isLoaded }, ref) => {
   const [geminiPrompt, setGeminiPrompt] = useState("");
   const [geminiPromptAndResArray, setGeminiPromptAndResArray] = useState([]);
@@ -43,7 +44,7 @@ const ChatbotPanel = forwardRef(({ isLoaded }, ref) => {
       {isLoaded && (
         <motion.div
           ref={ref}
-          className="fixed bottom-6 right-6 z-[100] h-[70vh] w-[24vw] max-w-[320px] min-w-[260px] bg-gray-900 text-white flex flex-col rounded-xl shadow-2xl overflow-hidden border border-gray-700"
+          className="fixed bottom-6 right-6 z-[100] h-[80vh] w-[30vw] min-w-[260px] bg-gray-900 text-white flex flex-col rounded-xl shadow-2xl overflow-hidden border border-gray-700"
           variants={chatBotVariants}
           initial="hidden"
           animate="visible"

@@ -5,8 +5,8 @@ import { motion } from "motion/react";
 import "../styles/animation.css";
 
 const FloatingBall = ({ className, duration, delay }) => {
-  const xRange = Math.random() * 200 - 40;
-  const yRange = Math.random() * 200 - 40;
+  const xRange = Math.random() * 300 - 40;
+  const yRange = Math.random() * 300 - 40;
 
   return (
     <motion.div
@@ -34,13 +34,13 @@ const FloatingBall = ({ className, duration, delay }) => {
 const BGAnimation = () => {
   return (
     <div className="fixed bg-pinkish top-0 left-0 w-screen h-screen overflow-hidden pointer-events-none z-[-10]">
-      {[...Array(2)].map((_, i) => (
+      {[...Array(1)].map((_, i) => (
         <FloatingBall key={`big-${i}`} className="bigBall" duration={10 + i * 3} delay={i * 2} />
       ))}
       {[...Array(2)].map((_, i) => (
         <FloatingBall key={`med-${i}`} className="medBall" duration={9 + i * 2} delay={i * 3} />
       ))}
-      {[...Array(3)].map((_, i) => (
+      {[...Array(2)].map((_, i) => (
         <FloatingBall key={`small-${i}`} className="smallBall" duration={8 + i * 2} delay={i * 4} />
       ))}
 

@@ -7,7 +7,7 @@ const Details = (props) => {
   return (
     <>
       <NavBar/>
-      <div className="bConatiner bg-gray-900 pb-20">
+      <div className="bConatiner bg-gray-900 pb-20 flex flex-col justify-center">
         <div className="flex justify-center pt-40 pb-10">
           <Image src={props.image} width={200} height={200} alt="" />
         </div>
@@ -16,17 +16,24 @@ const Details = (props) => {
           const sizeClass = index === 0 ? "text-5xl" : "text-6xl";
           return <h1
             key={curr + 10000}
-            width={100}
-            className={`bHeading ${sizeClass} text-white text-center break-words w-full max-w-xl mx-auto px-4`}
+            width={index==0 ? "100" :"100"}
+            className={`bHeading ${sizeClass} text-white text-center break-words w-full mx-auto px-4`}
           >
             {props[curr]}
           </h1>;
         })}
 
+          {props.agenda.map((curr, index) => (
+            <h1 className="bText text-2xl w-200 self-center text-center text-white mb-5 mt-20">
+              {curr}
+          </h1>
+          ))
+          }
+
         <div className="pb-7 text-white" />
         <hr className="bLine h-0.5 mx-auto mt-10 my-7 bg-yellow-600 border-0 rounded-sm md:my-10 dark:bg-white-700" />
 
-        <u className="bAbout bg-white">
+        <u className="bAbout">
           <h1 className="bHeading text-4xl text-center text-white mb-5 mt-20">
             ABOUT COMMITTEE
           </h1>
@@ -40,6 +47,7 @@ const Details = (props) => {
             {props.quote[0]}
           </p>
         </i>
+
         <p
           className="text-lg text-center text-white mb-15"
           style={{ marginLeft: 1.1 * (480 + +props.length) }}

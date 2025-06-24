@@ -7,14 +7,14 @@ import "./styles/navbar.css";
 import * as motion from "motion/react-client";
 import { scale } from "motion";
 
-const NavBar = ({children}) => {
+const NavBar = () => {
   const [showDrop1, setshowDrop1] = useState(false);
   const [showDrop2, setshowDrop2] = useState(false);
 
   return (
     <>
-      <motion.div className="fixed top-0 w-full" initial={{scaleX:0,x:'-100%'}} animate={{scaleX:'100%', x:'0'}} transition={{duration:0.7}}>
-        <nav className="m-[0.4px] rounded-lg bg-gray-950 flex items-center">
+      <motion.div className="z-50 fixed top-0 w-full" initial={{scaleX:0,x:'-100%'}} animate={{scaleX:'100%', x:'0'}} transition={{duration:0.7}}>
+        <nav className="m-[0.4px] rounded-lg bg-gray-800 flex items-center">
           <Link href='/'><Image
             src="/assets/boscoLogo.png"
             className="ml-50 p-1"
@@ -54,18 +54,18 @@ const NavBar = ({children}) => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y:-10 }}
               transition={{ duration: 0.3 }}
-              className="absolute bg-gray-800 p-10 rounded-md shadow-lg pt-4 border-8 border-gray-800"
+              className="absolute flex flex-col items-center bg-gray-800 p-10 rounded-md shadow-lg pt-4 border-8 border-gray-800"
             >
-              <Link href="/about" className="block text-xl text-white mb-2 mt-2">
+              <Link href="/about" className="block text-lg text-white mb-2 mt-2">
                 About
               </Link>
-              <hr className="h-px bg-gray-200 border-0 dark:bg-white"/>
-              <Link href="/executive-board" className="block text-2xl text-white mb-2 mt-2">
-                Executive Board
+              <hr className="h-px w-full bg-white border-0 dark:bg-white"/>
+              <Link href="/secretary-general-address" className="block text-lg text-white mb-2 mt-2">
+                Secretary General's Address
               </Link>
-              <hr className="h-px bg-gray-200 border-0 dark:bg-white"/>
-              <Link href="/agenda" className="block text-2xl text-white mb-2 mt-2">
-                Agenda
+              <hr className="h-px w-full bg-white border-0 dark:bg-white"/>
+              <Link href="/executive-board" className="block text-lg text-white mb-2 mt-2">
+                Heads of Administration
               </Link>
             </motion.div>
           )}
@@ -90,27 +90,27 @@ const NavBar = ({children}) => {
               transition={{ duration: 0.3 }}
               className="absolute bg-gray-800 p-10 rounded-md shadow-lg pt-4 border-8 border-gray-800"
             >
-              <Link href="/adhoc" className="block text-2xl text-white mb-2 mt-2">
+              <Link href="/adhoc" className="block text-lg text-white mb-2 mt-2">
                 ADHOC
               </Link>
               <hr className="h-px bg-gray-200 border-0 dark:bg-white"/>
-              <Link href="/unhsc" className="block text-2xl text-white mb-2 mt-2">
+              <Link href="/unhsc" className="block text-lg text-white mb-2 mt-2">
                 UNHSC
               </Link>
               <hr className="h-px bg-gray-200 border-0 dark:bg-white"/>
-              <Link href="/unhsc" className="block text-2xl text-white mb-2 mt-2">
+              <Link href="/unhsc" className="block text-lg text-white mb-2 mt-2">
                 DISEC
               </Link>
               <hr className="h-px bg-gray-200 border-0 dark:bg-white mb-2 mt-2"/>
-              <Link href="/asean" className="block text-2xl text-white">
+              <Link href="/asean" className="block text-lg text-white">
                 ASEAN
               </Link>
               <hr className="h-px bg-gray-200 border-0 dark:bg-white mb-2 mt-2"/>
-              <Link href="/fcic" className="block text-2xl text-white">
+              <Link href="/fcic" className="block text-lg text-white">
                 FCIC
               </Link>
               <hr className="h-px bg-gray-200 border-0 dark:bg-white mb-2 mt-2"/>
-              <Link href="/specpol" className="block text-2xl text-white">
+              <Link href="/specpol" className="block text-lg text-white">
                 SPECPOL
               </Link>
             </motion.div>
@@ -126,7 +126,7 @@ const NavBar = ({children}) => {
           </Link>
         </nav>
       </motion.div>
-        {children}
+
 
     </>
   );

@@ -1,44 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Important Note for the people in charge,
+I hv removed my GeminiAPI key from the .env, for security reasons, so the chatbot wont work unless provided with another key
 
-## Getting Started
+also as i had no pic relating to the Bosco mun, i just put Aryaman bhaiya's dp everywhere i required a pic, sorry for this
 
-First, run the development server:
+also if you are wondering if the contact page actually works, yea it does, i hv a mongodb cluster connected to it, as you can see from the .env file and the model+backend logic in the /lib folder
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+also i havent made all the committees as there was a time constraint, but i hv made 2 committee pages-adhoc and asean, which show how the others would turn out if given more time 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The data used has been taken from the LMC website(ik sir told not to use it, but I did not have any other place to get info)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The links to study guides dont work as i did not hv the links, for now it will direct to a page which will throw a not found 404 error, 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The things i hv written in the Conference-details are purely fictious n just for humour, and is not made to target any specific individual and should not be taken personally
+this was cuz, i didnt hv the details abt the conference and accomodation
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-
-
-
-COmments for reference
-1. make the comms as synamic roytes
-2. add boexes around the shit like BFest
-3. add balls that moves- animation by motion
+The home page was built in a hurry within abt 1hr, so it has turned out to look appalling

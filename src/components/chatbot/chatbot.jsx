@@ -22,20 +22,6 @@ const Chatbot = () => {
       if (panelRef.current && !panelRef.current.contains(e.target)) {
         setIsLoaded(false)
       }
-        // PanelRef.current
-        // This is the DOM node of your chatbot panel (a real <div> in the HTML).
-
-        // 🔹 e.target
-        // This is the DOM element that the user just clicked on.
-
-        // 🔹 panelRef.current.contains(e.target)
-        // This checks:
-
-        // “Did the user click inside the chatbot box?”
-
-        // So !panelRef.current.contains(e.target) means:
-
-        // “Did the user click outside the chatbot box?”
     }
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
@@ -49,9 +35,9 @@ const Chatbot = () => {
 
     <>
 
-      {!isLoaded && <div className="rounded-[100%] w-[5.5vw] h-[5.5vw] bg-white fixed bottom-6 right-6 z-50 cursor-pointer">
+      {!isLoaded && <div className="rounded-[100%] w-[4.5vw] h-[4.5vw] bg-white fixed bottom-6 right-6 z-50 cursor-pointer flex justify-center items-center">
         <button onClick={handleClick}>
-          <img className='rounded-[100%]' src="/assets/serviceAI.jpg" alt='Hello'/>
+          <img className="w-[4vw] h-[4vw] rounded-[100%]" src="/assets/serviceAI.jpg" alt='Hello'/>
         </button>
       </div>}
 

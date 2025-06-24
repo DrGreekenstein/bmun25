@@ -28,21 +28,23 @@ export default function ContactForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setClick(true);
-
-    try {
-      await axios.post("/api/contact-endpoint", {
+    const backupData = {
         firstName,
         lastName,
         email,
         message,
-      }).then(setSubmitted(true))
+    }
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setMessage("");
+
+    try {
+      setSubmitted(true)
+      await axios.post("/api/contact-endpoint", backupData);
     } catch (error) {
       console.error("Error submitting form:", error);
     } 
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setMessage("");
       setTimeout(() => setSubmitted(false), 2000);
       setClick(false)
   };
@@ -59,9 +61,9 @@ export default function ContactForm() {
           <h1 className="text-4xl font-bold text-center text-indigo-400">
             Contact Us
           </h1>
-          <h6 className="text-l font-bold text-left text-gray-400">
+          {!submitted && <h6 className="text-l font-bold text-left text-gray-400">
             Don't be hesitant, feel free to ask your query
-          </h6>
+          </h6>}
           {submitted && (
             <h6 className="text-l font-bold text-left text-green-500">
               Sumitted
