@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "motion/react";
 import { FaRegPaperPlane } from "react-icons/fa";
 import axios from "axios";
 
-
 const ChatbotPanel = forwardRef(({ isLoaded }, ref) => {
   const [geminiPrompt, setGeminiPrompt] = useState("");
   const [geminiPromptAndResArray, setGeminiPromptAndResArray] = useState([]);
@@ -24,6 +23,8 @@ const ChatbotPanel = forwardRef(({ isLoaded }, ref) => {
 
   const handleSubmit = async () => {
     const currentPrompt = geminiPrompt;
+    setGeminiPrompt("");
+
     setGeminiPromptAndResArray((prev) => [...prev, geminiPrompt]);
     setSubmitting(true);
     try {
@@ -35,7 +36,6 @@ const ChatbotPanel = forwardRef(({ isLoaded }, ref) => {
       console.error("Failed to get Gemini response:", error);
     } finally {
       setSubmitting(false);
-      setGeminiPrompt("");
     }
   };
 
@@ -92,21 +92,31 @@ const ChatbotPanel = forwardRef(({ isLoaded }, ref) => {
           </div>
 
           <div className="p-3 bg-gray-800 flex gap-2 items-center">
-            <input
-              type="text"
-              required
-              onChange={handleGeminiPrompt}
-              value={geminiPrompt}
-              placeholder="Type a message..."
-              className="flex-1 px-3 py-2 bg-gray-700 rounded-md placeholder-gray-400 text-white outline-none"
-            />
-            <button
-              disabled={submitting || geminiPrompt.trim() === ""}
-              onClick={handleSubmit}
-              className="bg-blue-600 px-4 py-2 rounded-md hover:bg-blue-700 text-sm font-semibold"
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (!submitting && geminiPrompt.trim() !== "") {
+                  handleSubmit();
+                }
+              }}
+              className="p-3 bg-gray-800 flex gap-2 items-center w-full"
             >
-              <FaRegPaperPlane />
-            </button>
+              <input
+                type="text"
+                required
+                onChange={handleGeminiPrompt}
+                value={geminiPrompt}
+                placeholder="Type a message..."
+                className="flex-1 px-3 py-2 bg-gray-700 rounded-md placeholder-gray-400 text-white outline-none"
+              />
+              <button
+                type="submit"
+                disabled={submitting || geminiPrompt.trim() === ""}
+                className="bg-blue-600 px-5 py-3 rounded-md hover:bg-blue-700 text-sm font-semibold"
+              >
+                <FaRegPaperPlane />
+              </button>
+            </form>
           </div>
         </motion.div>
       )}
